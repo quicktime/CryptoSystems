@@ -97,7 +97,7 @@ public class PlayfairCipher implements Cryptosystem {
         String result = "";
         String plaintext2 = "";
         
-        for (int i = 0; i < plaintext.length(); i += 2) {
+        for (int i = 0; i < plaintext.length() - 1; i += 2) {
         	char c1 = plaintext.charAt(i);
         	char c2 = plaintext.charAt(i + 1);
         	plaintext2 += c1;
