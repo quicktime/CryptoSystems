@@ -79,7 +79,7 @@ public class CryptosystemDemo {
                     "'" + mydecrypt + "'");
             if (mydecrypt.equals(decrypt)) {
                 System.out.println(">>> Decryption correct! Excellent!");
-            } else {
+             } else {
                 System.out.println(">>> Oops! Decrypt should be:\n" +
                         "'" + decrypt + "'");
             }

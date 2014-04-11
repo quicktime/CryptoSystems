@@ -95,10 +95,13 @@ public class PlayfairCipher implements Cryptosystem {
         plaintext = clean(plaintext);
         plaintext = removeWhitespace(plaintext);
         String result = "";
-        String plaintext2 = "";
-        
-        for (int i = 0; i < plaintext.length() - 1; i += 2) {
+        String plaintext2 = "";    
+        for (int i = 0; i < plaintext.length(); i += 2) {
         	char c1 = plaintext.charAt(i);
+        	if (i == plaintext.length() - 1) {
+        		plaintext2 += c1;
+        		break;
+        	}
         	char c2 = plaintext.charAt(i + 1);
         	plaintext2 += c1;
             if (c1 == c2) {
@@ -260,9 +263,7 @@ public class PlayfairCipher implements Cryptosystem {
         plaintext = plaintext.toUpperCase();
         for (int i = 0; i < plaintext.length(); ++i) {
         	char c = plaintext.charAt(i);
-        	if (plaintext.indexOf(c) == -1) {
-        		throw new IllegalArgumentException ("Character " + c + " at position " + i + " is not in the alphabet.");
-        	} else {
+        	if (c == 'A' || c == 'B' || c == 'C' || c == 'D' || c == 'E' || c == 'F' || c == 'G' || c == 'H' || c == 'I' || c == 'J' || c == 'K' || c == 'L' || c == 'M' || c == 'N' || c == 'O' || c == 'P' || c == 'Q' || c == 'R' || c == 'S' || c == 'T' || c == 'U' || c == 'V' || c == 'W' || c == 'X' || c == 'Y' || c == 'Z') {
         		result = result + c;
         	}
         }
