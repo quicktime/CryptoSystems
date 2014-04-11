@@ -258,17 +258,17 @@ public class PlayfairCipher implements Cryptosystem {
      * @param plaintext the plaintext to clean
      * @return the plaintext in form ready to encrypt
      */
-    protected String clean(String plaintext) {
-        String result = "";
-        plaintext = plaintext.toUpperCase();
-        for (int i = 0; i < plaintext.length(); ++i) {
-        	char c = plaintext.charAt(i);
-        	if (c == 'A' || c == 'B' || c == 'C' || c == 'D' || c == 'E' || c == 'F' || c == 'G' || c == 'H' || c == 'I' || c == 'J' || c == 'K' || c == 'L' || c == 'M' || c == 'N' || c == 'O' || c == 'P' || c == 'Q' || c == 'R' || c == 'S' || c == 'T' || c == 'U' || c == 'V' || c == 'W' || c == 'X' || c == 'Y' || c == 'Z') {
-        		result = result + c;
-        	}
-        }
-        return result;
-    }
+	protected String clean(String plaintext) {
+		String result = "";
+		plaintext = plaintext.toUpperCase();
+		for (int i = 0; i < plaintext.length(); i++) {
+			char c = plaintext.charAt(i);
+			if (ALPHABET.indexOf(c) != -1) {
+				result = result + c;
+			}
+		}
+		return result;
+	}
     
     /**
      * Find which row of the grid holds a certain character.
